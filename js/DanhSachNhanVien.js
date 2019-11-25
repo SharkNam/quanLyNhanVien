@@ -32,16 +32,19 @@ DanhSachNhanVien.prototype.layThongTinNhanVien = function (maNV) {
 
 DanhSachNhanVien.prototype.capNhatNhanVien = function (nhanVien) {
     //    CACH 1: FORM HAO
-    // let a = this.mangNV.map((item, index) => {
-    //     if (item.maNV === nhanVien.maNV) {
-    //         return (item = nhanVien);
-    //     }
-    //     else { return item; }
-    // })
-    // this.mangNV = a;
-
-    var viTri = this.timViTri(nhanVien.maNV)
-    if (viTri !== -1) {
-        this.mangNV[viTri] = nhanVien;
-    }
+    //map trả về hết tất cả các phẩn tử trong mảng, nếu duyệt qua phần tử nhưng phần tử đó ko thỏa mãn điều kiện thì vị trí phần tử đó trong mảng mới là undefined
+    let a = this.mangNV.map((item, index) => {
+        if (item.maNV === nhanVien.maNV) {
+            return nhanVien;
+        }
+        else { return item; }
+    })
+    // console.log(this.mangNV)
+    // console.log(a)
+    this.mangNV = a;
+    //CACH 2
+    // var viTri = this.timViTri(nhanVien.maNV)
+    // if (viTri !== -1) {
+    //     this.mangNV[viTri] = nhanVien;
+    // }
 }
