@@ -31,17 +31,17 @@ DanhSachNhanVien.prototype.layThongTinNhanVien = function (maNV) {
 }
 
 DanhSachNhanVien.prototype.capNhatNhanVien = function (nhanVien) {
-
-    // var xx = this.mangNV.filter(function (item, index) {
-    //     if (item.maNV === nhanVien.maNV)
-    //         return index;
+    //    CACH 1: FORM HAO
+    // let a = this.mangNV.map((item, index) => {
+    //     if (item.maNV === nhanVien.maNV) {
+    //         return (item = nhanVien);
+    //     }
+    //     else { return item; }
     // })
-    // console.log(xx);
-    // return this.mangNV[index] = nhanVien
+    // this.mangNV = a;
+
     var viTri = this.timViTri(nhanVien.maNV)
-    // console.log(viTri)
     if (viTri !== -1) {
         this.mangNV[viTri] = nhanVien;
     }
-
 }
